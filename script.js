@@ -12,4 +12,30 @@ const todayLack = {
 
 let personalLuck = []
 
-console.log(youCanBe[1])
+// Iterate over the object
+ // for(let prop in todayLack) {
+   // let optionIdx = generateRandomNum(todayLack[prop].length)
+  
+// iterate over the object
+for (let i in todayLack){
+    let optionIdx = generateRandomNum(todayLack[i].length)
+    switch(i){
+        case 'today' :
+            personalLuck.push(`today is " ${todayLack[i][optionIdx]}" . `)
+            break
+        case 'yourLuck' :
+            personalLuck.push(`you luck today is " ${todayLack[i][optionIdx]}" . `)
+            break
+        case 'youCan' :
+            personalLuck.push(`you can " ${todayLack[i][optionIdx]}" . `)
+            break
+        default:
+            personalLuck.push('No info for today')
+    }
+}
+function messageForToday (today){
+    const formatted = personalLuck.join('\n')
+    console.log(formatted)
+}
+
+messageForToday(personalLuck)
